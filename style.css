@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz@6..96&family=Lato&family=Poppins:wght@300&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;;
+}
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(90deg, #9b5329 1.18%, #f8a268 100%);
+}
+/* div containing everything*/
+.wrapper {
+    width: 450px;
+    background: whitesmoke;
+    border-radius: 10px;
+}
+/* calender header*/
+.wrapper header {
+    display: flex;
+    align-items: center;
+    padding: 25px 30px 10px;
+    justify-content: space-between;
+}
+.current-date {
+    font-size: 1.45rem;
+    font-weight: 900;
+}
+/* icons apperance*/
+.icons span {
+    height: 38px;
+    width: 38px;
+    background: #bbbaba;
+    font-size: 1.9rem;
+    margin: 0 1px;
+    text-align: center;
+    line-height: 38px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.icons span:hover {
+    background: #e4c9f0;
+}
+.icons span:last-child {
+    margin-right: -10px;
+}
+/* calender content*/
+.calender {
+    padding: 20px;
+}
+.calender ul{
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.calender ul li {
+    width: calc(100% / 7);
+    position: relative;
+}
+.days {
+    margin-bottom: 20px;
+}
+.days li {
+    margin-top: 30px;
+    cursor: pointer;
+    z-index: 1;
+}
+.calender .days li::before {
+    content: "";
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+.days li:hover::before {
+    background: rgba(228, 225, 225, 0.9);
+}
+.weeks li {
+    font-weight: 800;
+}
+/*occurring and non-recurring dates of the month*/
+.inactive {
+    color: rgba(167, 165, 165, 0.9);
+}
+.active {
+    color: whitesmoke;
+}
+.active::before {
+    background: linear-gradient(90deg, #9b5329 1.18%, #f8a268 100%);}
